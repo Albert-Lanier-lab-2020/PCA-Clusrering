@@ -6,14 +6,18 @@
 # 7/29/22
 ###############################################################################
 # Install packages
-install.packages("shiny")
-install.packages("factoextra")
-install.packages("shiny")
+#install.packages("shiny")
+#install.packages("factoextra")
+#install.packages("shiny")
 
 # runExample("09_upload") 
 # runExample("10_download")
 # runExample("05_sliders")
 ###############################################################################
+list.of.packages <- c("shiny", "factoextra","tidyverse")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
 library(shiny)
 library(factoextra)
 library(tidyverse)
