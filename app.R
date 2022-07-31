@@ -6,8 +6,9 @@
 # 7/29/22
 ###############################################################################
 # Install packages
-# install.packages("shiny")
-#install.packages("factoextra")
+install.packages("shiny")
+install.packages("factoextra")
+install.packages("shiny")
 
 # runExample("09_upload") 
 # runExample("10_download")
