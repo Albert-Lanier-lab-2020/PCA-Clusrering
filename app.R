@@ -91,7 +91,7 @@ server <- function(input, output) {
   observe({
     req(input$file1)
     df <- read.csv(input$file1$datapath, row.names = 1, header = TRUE)
-    df.t <- na.omit(t(df[-1,]))
+    df.t <- na.omit(t(df))
     df.t <- df.t[ , which(apply(df.t, 2, var) != 0)]
     updateSelectInput(inputId = "indiv", choices = colnames(df))
     updateSelectInput(inputId = "var", choices = colnames(df.t))
@@ -101,7 +101,7 @@ server <- function(input, output) {
     req(input$file1)
     df <- read.csv(input$file1$datapath, row.names = 1, header = TRUE)
     df<- df[,input$indiv]
-    df.t <- na.omit(t(df[-1,]))
+    df.t <- na.omit(t(df))
     df.t <- df.t[ , which(apply(df.t, 2, var) != 0)]
     res.pca <- prcomp(df.t, scale = TRUE)
     res.pca
